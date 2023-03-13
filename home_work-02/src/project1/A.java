@@ -1,20 +1,27 @@
-package project1;
+package Project1;
+
 import java.util.Scanner;
 
 public class A {
-    public int a, b;
+    private int a;
+    private int b;
 
-    public void method1() {
-        Scanner sr = new Scanner(System.in);
-        a = sr.nextInt();
-        b = sr.nextInt();
+    public void method1(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("a: ");
+        a = scan.nextInt();
+        System.out.println("b: ");
+        b = scan.nextInt();
+
+        scan.close();
     }
 
-    public void method2() {
+    public void method2(){
         System.out.println(a + b);
     }
 
-    public int method3() {
+    public int method3(){
         return a * b;
     }
 }

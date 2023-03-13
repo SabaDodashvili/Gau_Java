@@ -1,48 +1,66 @@
-package project1;
+package Project1;
 
 import java.util.Scanner;
 
 public class C {
-    public int a, b, c;
+    private int a;
+    private int b;
+    private int c;
 
-    public void method1() {
-        Scanner sr = new Scanner(System.in);
-        a = sr.nextInt();
-        b = sr.nextInt();
-        c = sr.nextInt();
-        sr.close();
+    public void method1(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("a: ");
+        a = scan.nextInt();
+
+        System.out.println("b: ");
+        b = scan.nextInt();
+
+        System.out.println("c: ");
+        c = scan.nextInt();
+
+        scan.close();
     }
 
-    public int method2() {
-        return a % 10;
+    public int method2(){
+        String num = Integer.toString(a);
+
+        int lastDigit = Character.digit(num.charAt(num.length() - 1), 10);
+
+        return lastDigit;
     }
 
-    public int method3() {
-        int b_local = b;
+    public int method3(){
+        String num = Integer.toString(b);
 
-        while(b_local > 10) {
-            b_local /= 10;
-        }
+        int firstDigit = Character.digit(num.charAt(0), 10);
 
-        return b_local;
+        return firstDigit;
     }
 
-    public int method4() {
-        int c_local = c;
+    public int method4(){
+        String num = Integer.toString(c);
+
         int sum = 0;
 
-        while(c_local > 0) {
-            sum += c_local%10;
-            c_local /= 10;
+        for (int i = 0; i < num.length(); i++) {
+            sum += Character.digit(num.charAt(i), 10);
         }
+
         return sum;
     }
 
-    public void method5() {
-        System.out.println(method2() * method3());
+    public int method5(){
+      int multi = method2() * method3();
+
+        System.out.println(multi);
+        return multi;
     }
 
-    public void method6() {
-        System.out.println(method3() + method4());
+    public void method6(){
+        int sum = method3() + method5();
+
+        System.out.println(sum);
     }
 }
+
