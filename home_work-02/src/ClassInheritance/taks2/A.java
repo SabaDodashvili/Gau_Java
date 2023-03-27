@@ -3,22 +3,31 @@ package ClassInheritance.taks2;
 import java.util.Scanner;
 
 public class A {
-    int x;
-    int y;
+//    public A(){
+//
+//    }
 
-    public void method1() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter x: ");
-        x = sc.nextInt();
-        System.out.print("Enter y: ");
-        y = sc.nextInt();
+    public int x;
+    public int y;
+
+    public void method1(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("input x: ");
+        this.x = scan.nextInt();
+
+        System.out.println("input y");
+        this.y = scan.nextInt();
+
+        scan.close();
     }
 
-    public void method2() {
-        System.out.println("x: " + x);
+    public void method2(){
+        System.out.println("x - " + this.x);
     }
 
-    public void method3() {
-        System.out.println("y: " + y);
+
+    public void method3(){
+        System.out.println("y - " + this.y);
     }
 }

@@ -1,22 +1,23 @@
 package ClassInheritance.taks2;
 
-public class C extends B {
-    int z;
+public class C extends B{
+    double z;
 
-    public C(int x, int y, int z) {
+    public C(int x, int y, double z) {
         super(x, y);
         this.z = z;
     }
 
-    public double method6() {
-        return (x + y + z) / 3.0;
+    public double method6(){
+
+        return (x + y + z) / 3;
     }
 
-    public double method7() {
-        return Math.cbrt(x * y * z);
+    public double method7(){
+        return Math.sqrt(x * y * z);
     }
 
-    public int method8() {
+    public double method8(){
         return Math.max(Math.max(x, y), z);
     }
 }
